@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,300&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+header,main,footer{
+    max-width: 450px;
+    margin: 0 auto;
+}
+header{
+    margin-top: 20px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.156);
+}
+header .logo{
+    padding: 10px;
+}
+header .contatos{
+    position: absolute;
+    right: 0px;
+    padding: 15px;
+}
+main{
+    height: 500px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    overflow-y: scroll;
+}
+main .mensagem{
+    width: 100%;
+    height: 50px;
+    margin-bottom:5px;
+    display: flex;
+    align-items: center;
+}
+.mensagem span{
+    margin-right: 10px;
+}
+.normal,.entrar-sair,.reservada{
+  padding-left: 20px;
+  font-size: 20px;
+
+}
+ main .normal{
+    background-color:#FFFFFF;
+
+}
+ main .entrar-sair{
+    background-color: #DCDCDC;
+ 
+}
+main .reservada{
+    background-color: #FFDEDE;
+  
+}
+footer{
+    height: 70px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer input{
+    
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+}
+footer ion-icon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    top: 35%;
+    padding-right: 8px;
+    cursor: pointer;
+}
