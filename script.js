@@ -73,13 +73,26 @@ function renderizarMensagens(messages){
     }
     console.log(renderizando)
     chat.innerHTML=renderizando
-    setInterval(carregarMensagens,10000)
+    setInterval(carregarMensagens,5000)
+    const ultimoElemento=document.querySelector('main').lastElementChild
+    ultimoElemento.scrollIntoView()
 }
- function enviarMensagem(){
+function manterConectado(){
+    let status={name:inicio}
+    const promisse=axios.post('https://mock-api.driven.com.br/api/v6/uol/status',status)
+    promisse.catch(enviarNome)
+}
+setInterval(manterConectado,5000)
+function enviarMensagem(){
     let input=document.querySelector('.escrever')
     let conteudo=input.value
     let novaMensagem= {from:inicio, to:'Todos', text:conteudo,type:'message'}
     const promisse=axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',novaMensagem)
     promisse.then(carregarMensagens)
     console.log(novaMensagem)
+  
 }
+document.addEventListener('keypress',function(e){
+    if(e.key=='Enter'){
+        enviarMensagem()}
+    })  
